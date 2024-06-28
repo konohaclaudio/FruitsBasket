@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:title="Carregar Imagem"
+                app:titleTextColor="@android:color/white" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <ImageView
+            android:id="@+id/formulario_imagem_imageview"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+            app:srcCompat="@drawable/imagem_padrao" />
+
+        <Button
+            android:id="@+id/formulario_imagem_botao_carregar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Carregar"
+            app:icon="@drawable/ic_action_refresh"
+            app:layout_constraintBottom_toBottomOf="@id/formulario_imagem_imageview"
+            app:layout_constraintEnd_toStartOf="@id/formulario_imagem_botao_camera"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/formulario_imagem_imageview" />
+
+        <Button
+            android:id="@+id/formulario_imagem_botao_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Câmera"
+            app:layout_constraintBottom_toBottomOf="@id/formulario_imagem_imageview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/formulario_imagem_botao_carregar"
+            app:layout_constraintTop_toBottomOf="@id/formulario_imagem_imageview" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/formulario_imagem_textinputlayout_url"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/formulario_imagem_botao_carregar">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/formulario_imagem_url"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="URL da imagem"
+                android:inputType="textUri" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
